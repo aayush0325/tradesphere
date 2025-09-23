@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  pageId Int @default(autoincrement())
+  userId String @id
+  name String
+  email String @unique
+  balance BigInt @default(10000000) // store upto 2 places of decimals as storing as float is not ideal
+}
