@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Format frontend
 cd tradesphere-ui && npx lint-staged
+
+# Format backend
+cd ../server/http && npx lint-staged
