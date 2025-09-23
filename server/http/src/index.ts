@@ -28,7 +28,6 @@ app.use(
 );
 
 app.get('/', c => {
-    // Test comment for formatting
     return c.text('Hello Hono!');
 });
 
