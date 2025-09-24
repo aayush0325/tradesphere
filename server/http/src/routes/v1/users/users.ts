@@ -48,7 +48,13 @@ users.post('/sync', async c => {
             userId: auth.userId,
             name: data.name,
             email: data.email,
+            portfolio: {
+                create: {}
+            }
         },
+        include: {
+            portfolio: true
+        }
     });
 
     if (newUser) {
